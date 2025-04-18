@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Status Codes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cream: #FCECDF;
+            --burgundy: #9E122C;
+            --orange: #EE6A43;
+            --salmon: #F99D90;
+            --yellow: #FBCB77;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cream);
+            color: var(--burgundy);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--burgundy);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .status-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .status-group {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-group h2 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--salmon);
+        }
+
+        .status-list {
+            list-style: none;
+        }
+
+        .status-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .status-link {
+            color: var(--burgundy);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .status-link:hover {
+            background-color: var(--salmon);
+            color: white;
+        }
+
+        .status-code {
+            font-weight: bold;
+            margin-right: 0.5rem;
+            min-width: 60px;
+        }
+
+        .status-description {
+            flex-grow: 1;
+        }
+
+        .status-icon {
+            margin-left: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .status-link:hover .status-icon {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .status-groups {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>HTTP Status Codes</h1>
+        
+        <div class="status-groups">
+            <div class="status-group">
+                <h2>1xx - Informational</h2>
+                <ul class="status-list">
+                    <li class="status-item"><a href="/100" class="status-link"><span class="status-code">100</span><span class="status-description">Continue</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/101" class="status-link"><span class="status-code">101</span><span class="status-description">Switching Protocols</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/102" class="status-link"><span class="status-code">102</span><span class="status-description">Processing</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="status-group">
+                <h2>2xx - Success</h2>
+                <ul class="status-list">
+                    <li class="status-item"><a href="/200" class="status-link"><span class="status-code">200</span><span class="status-description">OK</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/201" class="status-link"><span class="status-code">201</span><span class="status-description">Created</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/202" class="status-link"><span class="status-code">202</span><span class="status-description">Accepted</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/204" class="status-link"><span class="status-code">204</span><span class="status-description">No Content</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/206" class="status-link"><span class="status-code">206</span><span class="status-description">Partial Content</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/207" class="status-link"><span class="status-code">207</span><span class="status-description">Multi-Status</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="status-group">
+                <h2>3xx - Redirection</h2>
+                <ul class="status-list">
+                    <li class="status-item"><a href="/300" class="status-link"><span class="status-code">300</span><span class="status-description">Multiple Choices</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/301" class="status-link"><span class="status-code">301</span><span class="status-description">Moved Permanently</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/302" class="status-link"><span class="status-code">302</span><span class="status-description">Found</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/303" class="status-link"><span class="status-code">303</span><span class="status-description">See Other</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/304" class="status-link"><span class="status-code">304</span><span class="status-description">Not Modified</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/305" class="status-link"><span class="status-code">305</span><span class="status-description">Use Proxy</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/307" class="status-link"><span class="status-code">307</span><span class="status-description">Temporary Redirect</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="status-group">
+                <h2>4xx - Client Error</h2>
+                <ul class="status-list">
+                    <li class="status-item"><a href="/400" class="status-link"><span class="status-code">400</span><span class="status-description">Bad Request</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/401" class="status-link"><span class="status-code">401</span><span class="status-description">Unauthorized</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/402" class="status-link"><span class="status-code">402</span><span class="status-description">Payment Required</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/403" class="status-link"><span class="status-code">403</span><span class="status-description">Forbidden</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/404" class="status-link"><span class="status-code">404</span><span class="status-description">Not Found</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/405" class="status-link"><span class="status-code">405</span><span class="status-description">Method Not Allowed</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/406" class="status-link"><span class="status-code">406</span><span class="status-description">Not Acceptable</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/408" class="status-link"><span class="status-code">408</span><span class="status-description">Request Timeout</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/409" class="status-link"><span class="status-code">409</span><span class="status-description">Conflict</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/410" class="status-link"><span class="status-code">410</span><span class="status-description">Gone</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/411" class="status-link"><span class="status-code">411</span><span class="status-description">Length Required</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/412" class="status-link"><span class="status-code">412</span><span class="status-description">Precondition Failed</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/413" class="status-link"><span class="status-code">413</span><span class="status-description">Payload Too Large</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/414" class="status-link"><span class="status-code">414</span><span class="status-description">URI Too Long</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/415" class="status-link"><span class="status-code">415</span><span class="status-description">Unsupported Media Type</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/416" class="status-link"><span class="status-code">416</span><span class="status-description">Range Not Satisfiable</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/417" class="status-link"><span class="status-code">417</span><span class="status-description">Expectation Failed</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/418" class="status-link"><span class="status-code">418</span><span class="status-description">I'm a teapot</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/420" class="status-link"><span class="status-code">420</span><span class="status-description">Enhance Your Calm</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/421" class="status-link"><span class="status-code">421</span><span class="status-description">Misdirected Request</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/422" class="status-link"><span class="status-code">422</span><span class="status-description">Unprocessable Entity</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/423" class="status-link"><span class="status-code">423</span><span class="status-description">Locked</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/424" class="status-link"><span class="status-code">424</span><span class="status-description">Failed Dependency</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/425" class="status-link"><span class="status-code">425</span><span class="status-description">Too Early</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/426" class="status-link"><span class="status-code">426</span><span class="status-description">Upgrade Required</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/429" class="status-link"><span class="status-code">429</span><span class="status-description">Too Many Requests</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/431" class="status-link"><span class="status-code">431</span><span class="status-description">Request Header Fields Too Large</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/444" class="status-link"><span class="status-code">444</span><span class="status-description">No Response</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/450" class="status-link"><span class="status-code">450</span><span class="status-description">Blocked by Windows Parental Controls</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/451" class="status-link"><span class="status-code">451</span><span class="status-description">Unavailable For Legal Reasons</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/497" class="status-link"><span class="status-code">497</span><span class="status-description">HTTP Request Sent to HTTPS Port</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/498" class="status-link"><span class="status-code">498</span><span class="status-description">Token Expired/Invalid</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/499" class="status-link"><span class="status-code">499</span><span class="status-description">Client Closed Request</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="status-group">
+                <h2>5xx - Server Error</h2>
+                <ul class="status-list">
+                    <li class="status-item"><a href="/500" class="status-link"><span class="status-code">500</span><span class="status-description">Internal Server Error</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/501" class="status-link"><span class="status-code">501</span><span class="status-description">Not Implemented</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/502" class="status-link"><span class="status-code">502</span><span class="status-description">Bad Gateway</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/503" class="status-link"><span class="status-code">503</span><span class="status-description">Service Unavailable</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/504" class="status-link"><span class="status-code">504</span><span class="status-description">Gateway Timeout</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/506" class="status-link"><span class="status-code">506</span><span class="status-description">Variant Also Negotiates</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/507" class="status-link"><span class="status-code">507</span><span class="status-description">Insufficient Storage</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/508" class="status-link"><span class="status-code">508</span><span class="status-description">Loop Detected</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/509" class="status-link"><span class="status-code">509</span><span class="status-description">Bandwidth Limit Exceeded</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/510" class="status-link"><span class="status-code">510</span><span class="status-description">Not Extended</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/511" class="status-link"><span class="status-code">511</span><span class="status-description">Network Authentication Required</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/521" class="status-link"><span class="status-code">521</span><span class="status-description">Web Server Is Down</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/522" class="status-link"><span class="status-code">522</span><span class="status-description">Connection Timed Out</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/523" class="status-link"><span class="status-code">523</span><span class="status-description">Origin Is Unreachable</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/525" class="status-link"><span class="status-code">525</span><span class="status-description">SSL Handshake Failed</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                    <li class="status-item"><a href="/599" class="status-link"><span class="status-code">599</span><span class="status-description">Network Connect Timeout Error</span><i class="fas fa-arrow-right status-icon"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
