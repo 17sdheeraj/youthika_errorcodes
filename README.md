@@ -2,7 +2,7 @@
 
 **youthika_errorcodes** is a template which includes simple Python script that generates static HTML error pages for various HTTP status codes using a predefined `template.html` file. Each page includes a title, description, message, emoji, and additional context to better inform the user about the status or error.
 
-Made for [Youthika NGO](https://www.instagram.com/youthika_org) 👀👀
+Made for [Youthika Connect NGO](https://youthikaconnect.org) 👀👀
 
 ## Features
 
